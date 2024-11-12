@@ -1,11 +1,12 @@
 from django.urls import path
 from django.http import HttpResponse
-from calculadora.views import home, home1, home2, home3
+from calculadora import views
+from . import views
 
 urlpatterns = [
-    path('', home),
-    path('historico/', home1),
-    path('sair/', home2),
-    path('usuario/', home3),
+    path('calcular/', views.calcular, name='calcular'),
+    path('historico/', views.historico, name='historico'), 
+    path('sair/', views.sair, name='sair'),
+    path('usuario/<int:id>/', views.usuario, name='usuario'),
 
 ]

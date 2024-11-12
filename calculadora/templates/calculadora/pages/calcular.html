@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "calculadora/css/styles.css" %}>
+
+</head>
+
+<body>
+    <header>
+        <a href="#" id="logo">
+            <img src="{% static "img/logo.png" %}" alt="logo.png" alt='logo.png' />
+        </a>
+
+        <button id="openMenu">&#9776;</button>
+
+        <nav id="menu">
+            <button id="closeMenu">X</button>
+            <a href="{% url 'usuario' 1 %}">Usuário</a>
+            <a href="{% url 'historico' %}">Histórico</a>
+            <a href="#">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="extCalculadora">
+            <div class="calcular">
+                <h1>Calculadora de Prazos</h1>
+            </div>
+
+            <div class="observacao">
+                <h4>Aqui você cálcula os seus prazos e os salva em sua agenda!</h4>
+                <p>Observação: a contagem do prazo inicia-se 1 dia útil após a data da publicação.</p>
+            </div>
+
+            <div class="calculadora">
+                <form action="#" method="post" target="_blank">
+
+                    <p>
+                        <label for="nomeEvento">Nome do Evento</label><br>
+                        <input type="text" id="nomeEvento" name="nomeEvento">
+                    </p>
+
+                    <p>
+                        <label for="processo">Tipo de Processo</label><br>
+                        <input type="text" id="processo" nome="processo">
+                    </p>
+
+                    <p>
+                        <label for="evento">Tipo do evento</label><br>
+                        <input type="text" id="evento" name="evento">
+                    </p>
+
+                    <p>
+                        <label for="DataPubli">Data da Publicação</label><br>
+                        <input type="date" id="dataPubli" name="dataPubli">
+                    </p>
+
+                    <p>
+                        <label for="prazoDias">Prazo em dias</label><br>
+                        <input type="text" name="prazoDias" id="prazoDias">
+                    </p>
+
+                    <p>
+                        <label class="checkbox-container" for="notificar">Ativar notificação?
+                            <input type="checkbox" id="notificar" name="notificar" value="sim">
+                            <span class="checkmark"></span>
+                        </label>
+                    </p>
+
+                    <p>
+                        <button type="submit" class="btncalc">Calcular</button>
+                    </p>
+
+                </form>
+            </div>
+
+            <div class="feriados">
+                <h1>Feriados</h1>
+            </div>
+            <div class="listaFeriados">
+                <form action="#" method="get" target="_blank">
+                    <input type="text" name="feriado" id="feriado">
+                    <input type="text" name="feriado" id="feriado">
+                    <input type="text" name="feriado" id="feriado">
+                    <input type="text" name="feriado" id="feriado">
+                    <input type="text" name="feriado" id="feriado">
+                    <input type="text" name="feriado" id="feriado">
+                    <input type="text" name="feriado" id="feriado">
+                    <input type="text" name="feriado" id="feriado">
+                    <input type="text" name="feriado" id="feriado">
+                </form>
+            </div>
+    </main>
+
+    <aside>
+        <div class="flexContainer">
+            <div class="latesd">
+                <h1>Recentes</h1>
+            </div>
+
+            <div class="lastCalculation">
+                <h4>Ultímos Cálculos feitos!</h4>
+            </div>
+
+            <div class="lastForm">
+                <form action="#" method="push" target="_blank">
+                    <p>
+                        <label for="dataPubli">Data da Publicação</label><br>
+                        <input type="date" id="dataPubli" name="dataPubli">
+                    </p>
+                    <p>
+                        <label for="dias">Prazo em Dias</label><br>
+                        <input type="text" id="prazoDias" name="prazoDias">
+                    </p>
+                    <p>
+                        <label for="dataFicto"> Prazo Ficto</label><br>
+                        <input type="date" id="dataFicto" name="dataFicto">
+                    </p>
+                    <p>
+                        <label for="dataFinal">Prazo Final</label><br>
+                        <input type="date" id="dataFinal" name="dataFinal">
+                    </p>
+                    <p>
+                        <label class="customCheckbox" for="notificar">Notificar?
+                            <input type="text" id="notificar" name="notificar">
+                        </label>
+                    </p>
+
+                </form>
+            </div>
+
+        </div>
+    </aside>
+
+    <footer>
+        <div class="info">
+            <p>
+                Projeto desenvolvido pelo grupo DRP09-PJI110-SALA-002GRUPO-002 da Universidade UNIVESP.
+            </p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+
+</html>

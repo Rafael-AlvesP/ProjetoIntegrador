@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static "calculadora/css/styles.css" %}>
+
+</head>
+
+<body>
+    <header>
+        <a href="#" id="logo">
+            <img src="{% static "img/logo.png" %}" alt="logo.png" alt='logo.png' />
+        </a>
+
+        <button id="openMenu">&#9776;</button>
+
+        <nav id="menu">
+            <button id="closeMenu">X</button>
+            <a href="{% url 'usuario' 1 %}">Usuário</a>
+            <a href="{% url "calcular" %}">Calculadora</a>
+            <a href="#">Sair</a>
+        </nav>
+    </header>
+
+    <main class="main-content-container">
+        <div class="main-content-list container">
+            <div class="bloco">asd</div>
+            <div class="bloco">asd</div>
+            <div class="bloco">asd</div>
+            <div class="bloco">asd</div>
+            <div class="bloco">asd</div>
+            <div class="bloco">asd</div>
+            <div class="bloco">asd</div>
+            <div class="bloco">asd</div>
+            <div class="bloco">asd</div>
+            <div class="bloco">asd</div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="info">
+            <p>
+                Projeto desenvolvido pelo grupo DRP09-PJI110-SALA-002GRUPO-002 da Universidade UNIVESP.
+            </p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+
+</html>

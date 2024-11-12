@@ -2,14 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 
-def home(request):
-    return HttpResponse('HOME')
+def calcular(request):
+    return render(request, 'calculadora/pages/calcular.html')
 
-def home1(request):
-    return HttpResponse('HOME1')
+def historico(request):
+    return render(request, 'calculadora/pages/historico.html')
 
-def home2(request):
+def sair(request):
     return HttpResponse('HOME2')
 
-def home3(request):
-    return HttpResponse('HOME3')
+def usuario(request, id):
+    return HttpResponse(f'Usuario com ID: {id}')
