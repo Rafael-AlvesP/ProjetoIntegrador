@@ -20,4 +20,5 @@ from django.http import HttpResponse
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('calculadora.urls')),
+    path('authors/', include('authors.urls')),
 ]

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historico</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
@@ -19,28 +19,43 @@
 
         <nav id="menu">
             <button id="closeMenu">X</button>
-            <a href="usuario.html">Usuário</a>
             <a href="calculadora.html">Calculadora</a>
-            <a href="{% urls 'author/register_view.html' %}">Sair</a>
+            <a href="historico.html">Histórico</a>
+            <a href="login.html">Sair</a>
         </nav>
     </header>
 
-    <main class="main-content-container">
-        <div class="main-content-list container">
-            <div class="bloco">
-                <div class="lastForm">
-                    <form action="calculadora.html" method="push">
-                        {% csrf_token %}
-
-                        {{ form.as_p }}
-                    </form>
-                </div>
-
+    <main>
+        <div class="extCalculadora">
+            <div class="calcular">
+                <h1>Cadastrar</h1>
             </div>
-        
-        </div>
 
+            <div class="observacao">
+                <h4>Faça o seu Cadastro</h4>
+                <p>Se já tiver uma conta, acesse pela aba ao lado!</p>
+            </div>
+
+            <div class="calculadora">
+                <form action="usuario_mudar.html" method="post">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+                    
+                    <p>
+                        <button type="submit" class="btncalc">alterar</button>
+                    </p>
+
+                </form>
+            </div>
     </main>
+
+    <aside>
+        <div class="flexContainer">
+
+
+        </div>
+    </aside>
 
     <footer>
         <div class="info">

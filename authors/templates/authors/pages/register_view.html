@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <a href="login.html" id="logo">
+            <img src="assets/img/logo.png" alt="Logo" />
+        </a>
+
+        <button id="openMenu">&#9776;</button>
+
+        <nav id="menu">
+        </nav>
+    </header>
+
+    <main>
+        <div class="extCalculadora">
+            <div class="calcular">
+                <h1>Cadastrar</h1>
+            </div>
+
+            <div class="observacao">
+                <h4>Faça o seu Cadastro</h4>
+                <p>Se já tiver uma conta, acesse pela aba ao lado!</p>
+            </div>
+
+            <div class="calculadora">
+                <form action="" method="post">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <p>
+                        <button type="submit" class="btncalc">Cadastrar</button>
+                    </p>
+
+                </form>
+            </div>
+    </main>
+
+    <aside>
+        <div class="flexContainer">
+            <div class="latesd">
+                <h1>Login</h1>
+
+                <div class="lastForm">
+                    <form action="" method="get">
+
+                        {% csrf_token %} 
+
+                        {{ form.as_p }}
+
+                        <p>
+                            <button type="submit" class="btncalc">Acessar</button>
+                        </p>
+
+                    </form>
+                </div>
+
+            </div>
+    </aside>
+
+    <footer>
+        <div class="info">
+            <p>
+                Projeto desenvolvido pelo grupo DRP09-PJI110-SALA-002GRUPO-002 da Universidade UNIVESP.
+            </p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+
+</html>

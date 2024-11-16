@@ -1,28 +1,27 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href={% static "calculadora/css/styles.css" %}>
+    <title>Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 
 <body>
     <header>
         <a href="#" id="logo">
-            <img src="{% static "img/logo.png" %}" alt="logo.png" alt='logo.png' />
+            <img src="assets/img/logo.png" alt="Logo" />
         </a>
 
         <button id="openMenu">&#9776;</button>
 
         <nav id="menu">
             <button id="closeMenu">X</button>
-            <a href="{% url 'usuario' 1 %}">Usuário</a>
-            <a href="{% url 'historico' %}">Histórico</a>
-            <a href="#">Sair</a>
+            <a href="usuario.html">Usuário</a>
+            <a href="historico.html">Histórico</a>
+            <a href="{% urls 'authors/register_view.html '%}">Sair</a>
         </nav>
     </header>
 
@@ -38,39 +37,10 @@
             </div>
 
             <div class="calculadora">
-                <form action="#" method="post" target="_blank">
+                <form action="" method="post">
+                    {% csrf_token %}
 
-                    <p>
-                        <label for="nomeEvento">Nome do Evento</label><br>
-                        <input type="text" id="nomeEvento" name="nomeEvento">
-                    </p>
-
-                    <p>
-                        <label for="processo">Tipo de Processo</label><br>
-                        <input type="text" id="processo" nome="processo">
-                    </p>
-
-                    <p>
-                        <label for="evento">Tipo do evento</label><br>
-                        <input type="text" id="evento" name="evento">
-                    </p>
-
-                    <p>
-                        <label for="DataPubli">Data da Publicação</label><br>
-                        <input type="date" id="dataPubli" name="dataPubli">
-                    </p>
-
-                    <p>
-                        <label for="prazoDias">Prazo em dias</label><br>
-                        <input type="text" name="prazoDias" id="prazoDias">
-                    </p>
-
-                    <p>
-                        <label class="checkbox-container" for="notificar">Ativar notificação?
-                            <input type="checkbox" id="notificar" name="notificar" value="sim">
-                            <span class="checkmark"></span>
-                        </label>
-                    </p>
+                    {{ form.as_p }}
 
                     <p>
                         <button type="submit" class="btncalc">Calcular</button>
@@ -83,16 +53,11 @@
                 <h1>Feriados</h1>
             </div>
             <div class="listaFeriados">
-                <form action="#" method="get" target="_blank">
-                    <input type="text" name="feriado" id="feriado">
-                    <input type="text" name="feriado" id="feriado">
-                    <input type="text" name="feriado" id="feriado">
-                    <input type="text" name="feriado" id="feriado">
-                    <input type="text" name="feriado" id="feriado">
-                    <input type="text" name="feriado" id="feriado">
-                    <input type="text" name="feriado" id="feriado">
-                    <input type="text" name="feriado" id="feriado">
-                    <input type="text" name="feriado" id="feriado">
+                <form action="" method="get" target="_blank">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
                 </form>
             </div>
     </main>
@@ -108,23 +73,11 @@
             </div>
 
             <div class="lastForm">
-                <form action="#" method="push" target="_blank">
-                    <p>
-                        <label for="dataPubli">Data da Publicação</label><br>
-                        <input type="date" id="dataPubli" name="dataPubli">
-                    </p>
-                    <p>
-                        <label for="dias">Prazo em Dias</label><br>
-                        <input type="text" id="prazoDias" name="prazoDias">
-                    </p>
-                    <p>
-                        <label for="dataFicto"> Prazo Ficto</label><br>
-                        <input type="date" id="dataFicto" name="dataFicto">
-                    </p>
-                    <p>
-                        <label for="dataFinal">Prazo Final</label><br>
-                        <input type="date" id="dataFinal" name="dataFinal">
-                    </p>
+                <form action="" method="push">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
                     <p>
                         <label class="customCheckbox" for="notificar">Notificar?
                             <input type="text" id="notificar" name="notificar">
