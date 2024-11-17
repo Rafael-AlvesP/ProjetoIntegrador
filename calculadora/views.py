@@ -44,3 +44,18 @@ def calcular_prazos(request):
     )
     mail.send()
     return render(request, 'calculadora/pages/calcular.html', {'form': form})
+
+    def calcular_prazos(request):
+    if request.method == 'POST':
+        form = PrazoForm(request.POST)
+        if form.is_valid():
+            prazo = form.save(commit=False)
+            return redirect('historico') 
+    mail = EmailMessege(
+        subject="Prazo Tempo Fácil",
+        body="Olá, quero lembrar que hoje" {% form 'prazos/{dataFinal}' %} "há um evento com o nome de:" {% form 'prazos/{evento}' %}. 
+        from_email="tempo.facil@outlook.com",
+        to=[{% form 'usuario/{email}' %}]
+    )
+    mail.send()
+    return render(request, 'calculadora/pages/calcular.html', {'form': form})
