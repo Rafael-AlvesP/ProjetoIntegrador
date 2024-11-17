@@ -1,5 +1,4 @@
 from django.db import models
-from django.db import models
 
 class Prazo(models.Model):
     nomeEvento = models.CharField(max_length=100)
@@ -14,3 +13,10 @@ class Prazo(models.Model):
     def __str__(self):
         return self.nomeEvento
 
+
+class Holiday(models.Model):
+    name = models.CharField(max_length=255)
+    date = models.DateField(unique=True)
+
+    def __str__(self):
+        return f"{self.name} ({self.date})"
